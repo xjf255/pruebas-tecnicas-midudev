@@ -1,0 +1,130 @@
+#root {
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  content-visibility: auto;
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+div {
+  width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  figure {
+    width: 100%;
+    position: relative;
+    margin: 0;
+
+    & img {
+      width: 100%;
+      object-fit: cover;
+    }
+
+    &.image--opacity {
+      opacity: .6;
+    }
+  }
+
+  & .addToCart {
+    width: min-content;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #d0d0d0;
+    cursor: pointer;
+  }
+}
+
+main {
+  margin-top: 100px;
+  width: 80vw;
+  display: flex;
+  justify-content: space-between;
+
+  & section {
+    width: 50vw;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 210px));
+    column-gap: 20px;
+  }
+}
+
+aside {
+  width: 20vw;
+  background-color: #0000001a;
+  border: 1px solid #f9f9f9;
+  border-radius: 20px;
+  height: fit-content;
+
+  & ul {
+    list-style: none;
+    display: grid;
+    justify-content: center;
+    grid-template-columns:
+      repeat(auto-fill, minmax(120px, 160px));
+    gap: 10px;
+    padding-inline: 26px;
+  }
+}
+
+form {
+  display: flex;
+  gap: 50px;
+}
+
+.btn__menu {
+  display: none;
+}
+
+@media (width <=1000px) {
+  main>section {
+    width: 100%;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 160px));
+    row-gap: 20px;
+
+    & h3 {
+      margin: 0;
+    }
+
+    & span {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  aside {
+    display: none;
+  }
+
+  aside.--active{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100dvh;
+    overflow: scroll;
+    background-color: #1e1e1e;
+    display: block;
+  }
+
+  .btn__menu {
+    z-index: 100;
+    display: block;
+    fill: #fff;
+    top: 20px;
+    right: 20px;
+    position: absolute;
+    scale: 2;
+  }
+}
